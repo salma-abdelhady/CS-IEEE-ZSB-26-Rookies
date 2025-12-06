@@ -12,7 +12,7 @@ const double PI = 3.14159265358979323846;
 
 int n, m;
 vector<string> mp;
-vector<vector<bool>> visited; // keep as bool
+vector<vector<bool>> visited;
 
 void dfs(int x, int y){
     visited[x][y] = true;
