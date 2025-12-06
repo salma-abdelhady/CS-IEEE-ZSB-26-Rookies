@@ -1,23 +1,18 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-//#define int    long long
 #define vi     vector<int>
 #define pii    pair<int, int>
 #define all(v) v.begin(), v.end()
-#define dpp(arr,val) memset(arr,val,sizeof(arr))
 template<typename T> ostream& operator<<(ostream& os, vector<T>& v){for (auto& i : v) os << i << ' ';return os;}
 template<typename T> istream& operator>>(istream& is, vector<T>& v){for (auto& i : v) is >> i;return is;}
 void FastIO(){ios_base::sync_with_stdio(false);cin.tie(nullptr);}
-void UseFile(){freopen("divsnums.in", "r", stdin);}
 const int mod = 1000000007;
-//const int sz = 1e5+10;
 const double PI = 3.14159265358979323846;
 
 int n, m;
 vector<string> mp;
-vector<vector<int>> visited;
+vector<vector<bool>> visited; // keep as bool
 
 void dfs(int x, int y){
     visited[x][y] = true;
@@ -61,12 +56,12 @@ void solve(){
     for(int i = 0; i < n; i++){
         cin >> mp[i];
     }
-
+    
     visited.resize(n);
     for(int i = 0; i < n; i++){
         visited[i].resize(m);
         for(int j = 0; j < m; j++){
-            visited[i][j] = 0;
+            visited[i][j] = false;
         }
     }
 
